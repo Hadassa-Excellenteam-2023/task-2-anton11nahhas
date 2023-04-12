@@ -1,0 +1,9 @@
+# Ignore build directories
+cmake-build-*/
+
+# Ignore executable files
+*.exe
+*.out
+.vs/
+out/
+
