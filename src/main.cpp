@@ -1,11 +1,14 @@
 // Chess 
 #include "Chess.h"
+#include "board.h"
 
 int main()
 {
-	string board = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr"; 
-//	string board = "##########K###############################R#############r#r#####";
+	//string board = "RNBQKBNRPPPPPPPP################################pppppppprnbqkbnr"; 
+	string board = "B#########K##################q############R#############r#r#####";
+	std::cout << board.size();
 	Chess a(board);
+	Board b(board);//create a board object by sending it the board
 	int codeResponse = 0;
 	string res = a.getInput();
 	while (res != "exit")
@@ -23,13 +26,8 @@ int main()
 		41 - the last movement was legal and cause check 
 		42 - the last movement was legal, next turn 
 		*/
-
-		/**/ 
-		{ // put your code here instead that code
-			cout << "code response >> ";
-			cin >> codeResponse;
-		}
-		/**/
+		codeResponse = b.getResponse(res);//call the get response funn to get 
+							//the code response
 
 		a.setCodeResponse(codeResponse);
 		res = a.getInput(); 
